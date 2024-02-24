@@ -1,0 +1,365 @@
+@import url(./_variables.less);
+@import url(./_cleanup.less);
+
+html {
+  color: @fontWhite;
+}
+.container{
+  min-width: 320px;
+  max-width: 1300px;
+  padding:0 50px;
+  margin:0 auto;
+}
+#header{
+  position: fixed;
+  top:0;
+  left:0;
+  z-index:10;
+  width:100%;
+  background-color:@lightGreen;
+  box-shadow: 0 0 12px rgba(0,0,0,.12);
+}
+#content{
+  min-height:calc(~'100vh - @{footerHeight}');
+  padding-top: calc(~'53px + @{headerHeight}');
+  padding-bottom: 53px;
+}
+.nav{
+  height:@headerHeight;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo{
+  font-size: 20px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: @transition;
+  color: @fontWhite;
+  font-family: Roboto400;
+}
+
+.logo-letter{
+  transition: @transition;
+}
+
+.logo-text{
+  transition: @transition;
+}
+nav .logo:hover .logo-letter{
+  color:@lightGreen;
+  box-shadow: 0 0 12px rgba(0,0,0,.12);
+}
+nav .logo:hover .logo-text{
+  color:@darkGreen;
+}
+.logo .logo-letter{
+  background: @darkGreen;
+  color: @fontWhite;
+  display: block;
+  border-radius: @borderRadius;
+  font-weight: 700;
+  width: 42px;
+  height:42px;
+  line-height: 42px;
+  text-align: center;
+}
+.logo .logo-letter_scaled{
+  width:46px;
+  line-height: 46px;
+  height:46px;
+  font-size: 23px;
+}
+.logo span{
+  margin-left: 8px;
+}
+.social{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+.social-link, .social-button{
+  opacity: 1;
+  transition: @transition;
+  padding:5px;
+}
+.social-link:hover{
+  opacity: .8;
+}
+.social-button button{
+  font-family: Roboto400RU;
+  background-color: @darkGreen;
+  border:none;
+  color:@fontHeaderBtn;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: @borderRadius;
+  padding: 0 25px;
+  line-height: 42px;
+  margin-left:20px;
+  cursor: pointer;
+  transition: @transition;
+}
+.social-button button:hover{
+  box-shadow: 0 0 12px rgba(0,0,0,.12);
+  color:@fontWhite
+}
+.social-button.social-button_white button{
+  color:@white;
+}
+.login{
+  width:100%;
+  max-width: 560px;
+  border:1px solid @borderColor;
+  border-radius: @borderRadiusForm;
+  padding:40px;
+}
+.login-title{
+  color:@fontBlack;
+  font-family: Roboto500RU;
+  font-size: 36px;
+  padding-top:25px;
+}
+.login-sub-title{
+  color:@fontGray;
+  font-family: Roboto300RU, Roboto300;
+  font-size: 16px;
+}
+.login-sub-title__padding{
+  padding-top: 20px;
+  padding-bottom: 42px;
+}
+.login-button{
+  text-transform: uppercase;
+  display:block;
+  width:100%;
+  border-radius: @borderRadius;
+  font-family: Roboto400RU, Roboto400;
+  text-decoration:none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:18px 0; 
+  font-size: 16px;
+}
+.login-button svg{
+  margin-right: 12px;
+}
+.login-button_yandex{
+  background-color: @fontBlack;
+  color:@loginBtnColor;
+  border: 1px solid @fontBlack;
+}
+.login-button_google{
+  background-color: @white;
+  color:@fontBlack;
+  border: 1px solid @fontBlack;
+  margin-top: 13px;
+}
+.login-sub-title.login-sub-title_small {
+  font-size: 12px;
+}
+.bodylink{
+  color:@darkGreen;
+  text-decoration: none;
+}
+.bodylink:hover{
+  text-decoration: underline;
+}
+#footer{
+  background-color: @footerColor;
+}
+#footer .nav{
+  border-bottom:1px solid @borderColor;
+}
+.inline-links{
+  font-family: Roboto300RU,Roboto300;
+  list-style-type: none;
+  display: flex;
+  padding:20px 0;
+}
+.inline-links a{
+  color:@loginBtnColor;
+  text-decoration: none; 
+  font-size: 12px;
+}
+.inline-links a:hover{
+  text-decoration: underline;
+}
+.inline-links li:not(:first-child){
+  padding-left: 36px;
+}
+.show-modal{
+  overflow: hidden;
+}
+#callModal{
+  align-items: center;
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  display: none;
+  flex-flow: row nowrap;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
+}
+.modal{
+  width: 100%;
+  max-width:552px;
+  background-color: @white;
+  border-radius: @borderRadiusForm;
+  padding:56px;
+}
+.modal-title{
+  color:@fontBlack;
+  font-size:28px;
+  font-family: Roboto400RU;
+}
+.login-sub-title__callPadding{
+  padding-top:10px;
+  padding-bottom: 30px;
+  font-size: 16px;
+}
+.callLabel{
+  color:@callColor;
+  font-family: Roboto300RU;
+  font-size: 14px;
+
+}
+.callInput{
+  margin-top: 5px;
+  font-family: Roboto300RU;
+  width:100%;
+  font-size: 16px;
+  border-radius: @borderRadius;
+  border:1px solid @borderColor;
+  padding:15px;
+}
+.buttons-wrapper{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+.button{
+  width:50%;
+  max-width:208px;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding:15px 0;
+  background-color: @callBtnGreen;
+  border:1px solid @callBtnGreen;
+  color: @white;
+  border-radius: @borderRadiusCall;
+  cursor: pointer;
+}
+.button__white{
+  color: @callBtnGreen;
+  background-color: @white;
+}
+.menu{
+  width:30px;
+  display: none;
+}
+.menu svg{
+  fill: #fff;
+}
+#socialLinks{
+  background-color: @lightGreen;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  position: fixed;
+  top:92px;
+  left: -50px;
+  transition: @transition;
+}
+#socialLinks.social-link{
+  width:50px;
+}
+#socialLinks.active{
+  left: 0;
+}
+
+@media screen and (max-width: @md){
+
+  .social-button button{
+    margin-left: 0;
+  }
+  .login{
+    margin:0 auto;
+  }
+  .logo-text{
+    display: none;
+  }
+}
+@media screen and (max-width: @sm){
+  .social-link{
+    display: none;
+  }
+  .menu{
+    display: block;
+  }
+  #socialLinks .social-link{
+    display: block;
+  }
+  .container{
+    padding: 0 10px;
+  }
+  .inline-links{
+    flex-direction: column;
+    align-items: center;
+  }
+  .inline-links li:not(:first-child){
+    padding-left: unset;
+  }
+  .login{
+    padding: 20px;
+  }
+  .modal{
+    padding:30px;
+  }
+  .button{
+    width:100%;
+    max-width: unset;
+    margin-bottom: 10px;
+  }
+  .buttons-wrapper{
+    flex-direction: column;
+    padding-top: 10px;
+  }
+  #content{
+    padding-top: calc(~'43px + @{headerHeight}');
+    padding-bottom: 43px;
+  }
+}
+@media screen and (max-width: @xs){
+  .social-button button{
+    font-size: 13px;
+    padding:0 10px;
+  }
+  .login{
+    padding: 10px;
+  }
+  .login-title{
+    font-size: 28px;
+    padding-top: 15px;
+  }
+  .login-sub-title__padding{
+    padding-bottom: 32px;
+  }
+  #content{
+    padding-top: calc(~'23px + @{headerHeight}');
+    padding-bottom: 23px;
+  }
+  .login-button{
+    font-size: 13px;
+  }
+}
