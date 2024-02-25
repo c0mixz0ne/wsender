@@ -430,11 +430,27 @@ nav .logo:hover .logo-text {
   background-color: #fff;
 }
 .menu {
-  width: 30px;
   display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0D907C;
+  padding: 5px;
+  border-radius: 3px;
+  font-family: Roboto400RU;
+  -webkit-box-align: center ;
+      -ms-flex-align: center ;
+          align-items: center ;
+  font-size: 16px;
+  text-transform: uppercase;
 }
 .menu svg {
   fill: #fff;
+  height: 20px;
+  width: 20px;
+}
+.menu span {
+  padding-left: 5px;
 }
 #socialLinks {
   background-color: #1FBEA5;
@@ -442,14 +458,16 @@ nav .logo:hover .logo-text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 50px;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
   position: fixed;
   top: 92px;
-  left: -50px;
+  top: -50px;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
 }
@@ -457,7 +475,7 @@ nav .logo:hover .logo-text {
   width: 50px;
 }
 #socialLinks.active {
-  left: 0;
+  top: 92px;
 }
 @media screen and (max-width: 768px) {
   .social-button button {
@@ -475,7 +493,9 @@ nav .logo:hover .logo-text {
     display: none;
   }
   .menu {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   #socialLinks .social-link {
     display: block;
@@ -524,6 +544,9 @@ nav .logo:hover .logo-text {
   .social-button button {
     font-size: 13px;
     padding: 0 10px;
+  }
+  .menu {
+    font-size: 13px;
   }
   .login {
     padding: 10px;
